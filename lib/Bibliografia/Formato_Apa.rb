@@ -9,6 +9,7 @@ module Bibliografia
                 @lista2 = Lista.new
         end
         
+        
         #Nombres y apellidos.
         
         def nombre(other)
@@ -49,8 +50,5 @@ module Bibliografia
         
     end
 
-        
-        
-        
-    end
+
 end

@@ -7,8 +7,7 @@ class Node
 	end
 end
 
-module Lista
-   
+module Bibliografia
    class Lista
    	include Enumerable
    	attr_reader :inicio,:fin
