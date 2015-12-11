@@ -17,3 +17,6 @@ $ bundle exec rspec --init
 
 tambien se comprueba con la herramienta Coverall la historia del cubrimiento y las estadisticas del
 codigo Ruby desarrollado.
+
+Para la práctica también se ha usado la herramienta Travis.
+
