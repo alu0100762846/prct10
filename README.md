@@ -20,3 +20,6 @@ codigo Ruby desarrollado.
 
 Para la práctica también se ha usado la herramienta Travis.
 
+[![Build Status](https://travis-ci.org/alu0100762846/prct10/branches)
+
+## Coveralls
