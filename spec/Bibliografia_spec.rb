@@ -3,7 +3,7 @@ require './lib/Bibliografia/Bibliografia.rb'
 require './lib/Bibliografia/lista.rb'
 require './lib/Bibliografia/Formato_Apa.rb'
     
-    
+    #prueba
 describe Bibliografia do 
     before :each do 
         @fapa = Bibliografia::Formato_Apa.new()
