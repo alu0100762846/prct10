@@ -15,6 +15,7 @@ module Bibliografia
             @numeroedicion = numeroedicion
             @isbn = isbn
         end
+        #comentario
         
         def to_s
           "#{@autores.join(",")}\n#{@titulo}\n#{@fecha}\n#{@apellidos}"
@@ -80,9 +81,7 @@ module Bibliografia
 			"#{@valor}"
 		end
 		
-		
-		
-    end
+end
     
     
     class Libro < Bibliografia
