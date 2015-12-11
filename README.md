@@ -18,8 +18,11 @@ $ bundle exec rspec --init
 tambien se comprueba con la herramienta Coverall la historia del cubrimiento y las estadisticas del
 codigo Ruby desarrollado.
 
+
+# Travis
+
 Para la práctica también se ha usado la herramienta Travis.
 
 [![Build Status](https://travis-ci.org/alu0100762846/prct10/branches)
 
-## Coveralls
+# Coveralls
