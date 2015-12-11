@@ -3,35 +3,110 @@ module Bibliografia
     class Bibliografia
         include Comparable
        
-        attr_reader :autores, :titulo, :serie, :fechapublicacion
-        attr_accessor :autores, :titulo, :fechapublicacion
-        def initialize(autores, titulo, fechapublicacion)
+        attr_reader :autores,:apellidos, :titulo, :fechapublicacion, :serie, :edicion ,:numeroedicion, :isbm  
+        
+        def initialize(autores,apellidos, titulo, fechapublicacion, serie, edicion,numeroedicion,isbn)
             @autores = autores
+            @apellidos = apellidos
             @titulo = titulo
             @fechapublicacion = fechapublicacion
+            @serie = serie
+            @edicion = edicion
+            @numeroedicion = numeroedicion
+            @isbn = isbn
         end
         
         def to_s
-          "#{@autores.join(",")}\n#{@titulo}\n#{@fecha}"
+          "#{@autores.join(",")}\n#{@titulo}\n#{@fecha}\n#{@apellidos}"
         end
        
-        def <=> other
-            autores <=> other.autores
-        end
+        def <=>(other)
+			if(@apellidos != other.apellidos)
+				@apellidos <=> other.apellidos
+			else
+				if(@fechapublicacion != other.fechapublicacion)
+					@fechapublicacion <=> other.fechapublicacion
+				else
+					@titulo <=> other.titulo
+				end
+			end
+		end
+		
+		def getautores()
+			tam = @autores.length
+			i, j = 0
+			while i < (tam - 1)
+				cadena = "#{cadena}"+"#{@autores[i]} #{@apellidos[i]}, "
+				i = i+1
+				j = j+1
+			end
+			cadena = "#{cadena}"+"#{@autores[i]} #{@apellidos[i]}"
+		end
+		
+		def gettitulo()
+			"#{@titulo}"
+		end
+
+
+        def getedicion()
+			"#{@edicion}"
+		end
+
+		def getnumeroedicion()
+			"#{@numeroedicion}"
+		end
+
+		def getserie()
+			"#{@serie}"
+		end
+
+		def getisbn()
+			tam = @isbn.length
+			a = @isbn[0].length
+			cadena = "ISBN-#{a}: "
+			if a > 10
+				cadena = "#{cadena}" + "#{@isbn[0][-a..-11]}" + " - " + "#{@isbn[0][-10..-1]}"
+			else
+				cadena = "#{cadena}"+"#{@isbn[0]}"
+			end
+			i = 1
+		end
+
+		def getfecha()
+			"#{@fechapublicacion}"
+		end
+
+		def to_s(valor)
+			"#{@valor}"
+		end
+		
+		
+		
     end
     
     
     class Libro < Bibliografia
     
-      attr_reader :serie, :editorial, :numeroedicion, :isbm
-      attr_accessor :serie, :editorial, :numeroedicion, :isbn
-       
-       def initialize(serie = nil, editorial, nuemroedicion, isbm)
-           @serie = serie
-           @editorial = editorial
-           @numeroedicion = numeroedicion
-           @isbn = isbn
+        def initialize(autores,apellidos,titulo, fechapublicacion, serie = nil,edicion, numeroedicion, isbn)
+            @autores = autores
+            @apellidos = apellidos
+            @titulo = titulo
+            @fechapublicacion = fechapublicacion
+            @serie = serie
+            @edicion = edicion
+            @numeroedicion = numeroedicion
+            @isbn = isbn
        end
+       
+       def <=> other
+			@titulo <=> other.titulo
+	   end
+	   
+	    def ==(other)
+			@titulo == other.titulo
+	    end
+       
+       
     end
     
     class Art_revista < Bibliografia
